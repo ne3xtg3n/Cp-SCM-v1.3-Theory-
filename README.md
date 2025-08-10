@@ -194,7 +194,106 @@ K_{ij} = \frac{1}{\epsilon + I_{ij}}
 
 ---
 
-If you want, I can now move on to Section 7: Data Visualizations in this exact same style so the whole SCM package is fully GitHub-ready and continuous.
+Got it — I’ll start Section 7: Equations & Mathematical Derivations in your locked-in SCM v1.3 GitHub format, so all math renders correctly and is consistent with Sections 1–6.
 
-Do you want me to proceed with Section 7 now?
+Here’s the full draft:
+
+
+---
+
+7. Equations & Mathematical Derivations
+
+This section contains the complete mathematical framework for the Self-Simulating Computational Manifold (SCM v1.3), including all primary equations referenced in earlier sections. Equations are formatted for GitHub-compatible LaTeX rendering.
+
+
+---
+
+7.1 Initial State Definition
+
+The initial pure state is defined as:
+
+|\psi_0\rangle = \frac{1}{\sqrt{\sum_i |a_i|^2}} \sum_i a_i |i\rangle
+
+where  are complex coefficients drawn from a Gaussian distribution:
+
+a_i \sim \mathcal{N}(0,1) + i \,\mathcal{N}(0,1)
+
+The corresponding density matrix is:
+
+\rho_0 = |\psi_0\rangle \langle \psi_0|
+
+
+---
+
+7.2 Reduced Density Matrix
+
+For a subsystem  of the full quantum state , the reduced density matrix is:
+
+\rho_A = \mathrm{Tr}_{\bar{A}}(\rho)
+
+where  denotes the partial trace over all degrees of freedom not in .
+
+
+---
+
+7.3 2-Rényi Entropy
+
+The neighborhood 2-Rényi entropy is defined as:
+
+S_2(\rho) = -\log \left[ \mathrm{Tr}(\rho^2) \right]
+
+For SCM, the total cost functional is:
+
+\mathcal{C} = \sum_{\text{pairs } (i,j)} S_2(\rho_{ij})
+
+
+---
+
+7.4 Gradient Descent Update Rule
+
+The optimization step is given by:
+
+\theta_{t+1} = \theta_t - \eta \nabla_\theta \mathcal{C}(\theta_t)
+
+where  is the gradient step size ( in Section 6.2).
+
+
+---
+
+7.5 Purity
+
+For a bipartite subsystem :
+
+\text{Purity}(\rho_{ij}) = \mathrm{Tr}(\rho_{ij}^2)
+
+Mean pair purity is computed as:
+
+\overline{\text{Purity}} = \frac{1}{N_\text{pairs}} \sum_{i<j} \mathrm{Tr}(\rho_{ij}^2)
+
+
+---
+
+7.6 Mutual Information
+
+For subsystems  and :
+
+I(A : B) = S(\rho_A) + S(\rho_B) - S(\rho_{AB})
+
+where the von Neumann entropy is:
+
+S(\rho) = -\mathrm{Tr}(\rho \log \rho)
+
+
+---
+
+7.7 Curvature
+
+SCM curvature between nodes  and  is:
+
+K_{ij} = \frac{1}{\epsilon + I_{ij}}
+
+where  is a small regularization constant () to avoid division by zero.
+
+
+---
 
