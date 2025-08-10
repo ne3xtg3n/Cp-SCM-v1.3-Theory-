@@ -552,11 +552,20 @@ This section interprets the numerical and visual results from Section 4 in the c
 
 ---
 
+
+## 5.1 Purity Dynamics
+![1000016980](https://github.com/user-attachments/assets/f17151ad-f970-4e68-b528-a4d3525b5e8a)
+
 ### 5.1 Purity Dynamics
 
-**Observation:** The mean pair purity increased from ~0.404 to ~0.443 during the first six time steps, followed by a stable plateau.
+**Observation:**  
+The mean pair purity increased from ~0.404 to ~0.443 during the first six time steps, followed by a stable plateau.
 
+**Mathematical Context:**  
+```math
+\text{Purity}(\rho) = \mathrm{Tr}(\rho^2)
 **Mathematical Context:**
+
 ```math
 \text{Purity}(\rho) = \mathrm{Tr}(\rho^2)
 
@@ -565,30 +574,27 @@ Where ( \rho ) is the reduced density matrix for a two-qubit subsystem.
 Implication:
 A rising purity indicates that the projected 2-Rényi gradient optimizer is successfully driving subsystems toward more coherent, less mixed states. In SCM terms, this corresponds to an increase in localized informational order, which theoretically reduces the local "thermal noise" within the emergent manifold.
 
-
----
-
 5.2 Mutual Information Growth
 
-Observation: Off-diagonal quantum mutual information values increased from ~0.168 to ~0.248 by step 5, then settled around ~0.239.
+Observation:
+Off-diagonal quantum mutual information values increased from ~0.168 to ~0.248 by step 5, then settled around ~0.239.
 
 Mathematical Context:
 
 I(A : B) = S(\rho_A) + S(\rho_B) - S(\rho_{AB})
 
-where ( S(\rho) ) is the von Neumann entropy:
+Where ( S(\rho) ) is the von Neumann entropy:
 
 S(\rho) = -\mathrm{Tr}(\rho \log \rho)
 
 Implication:
-Higher mutual information indicates stronger correlations between qubit subsystems. In SCM, this is interpreted as stronger "edge weights" in the emergent network graph, leading to more pronounced curvature effects in the manifold’s information geometry.
-
-
----
+Higher mutual information indicates stronger correlations between qubit subsystems.
+In SCM, this is interpreted as stronger "edge weights" in the emergent network graph, leading to more pronounced curvature effects in the manifold’s information geometry.
 
 5.3 Curvature Stability
 
-Observation: All off-diagonal curvature values remained constant at 2.0 for the duration of the run.
+Observation:
+All off-diagonal curvature values remained constant at 2.0 for the duration of the run.
 
 Curvature Definition in SCM:
 
@@ -597,10 +603,7 @@ K_{ij} = \frac{1.0}{\epsilon + I_{ij}}
 Where ( \epsilon ) is a small constant to avoid division by zero, and ( I_{ij} ) is the mutual information between qubits ( i ) and ( j ).
 
 Implication:
-The uniformity suggests that, for n=5, the manifold reaches an isotropic curvature state quickly. This may be due to the simplicity of the system; larger n should be tested to determine whether anisotropic curvature structures emerge in more complex networks.
-
-
----
+The uniformity suggests that, for ( n = 5 ), the manifold reaches an isotropic curvature state quickly. This may be due to the simplicity of the system; larger ( n ) should be tested to determine whether anisotropic curvature structures emerge in more complex networks.
 
 5.4 Scalability & Predictive Significance
 
@@ -608,13 +611,10 @@ Scaling Complexity:
 
 \text{Memory and time cost} \sim O(4^n)
 
-For n=8, density matrices are (256 \times 256), pushing classical simulation limits.
+For ( n = 8 ), density matrices are ( 256 \times 256 ), pushing classical simulation limits.
 
 Prediction:
-If curvature patterns diversify with increased n, SCM could demonstrate the scaling of geometric complexity in step with quantum correlations, a necessary property if the model is to mirror realistic spacetime emergence.
-
-
----
+If curvature patterns diversify with increased ( n ), SCM could demonstrate the scaling of geometric complexity in step with quantum correlations — a necessary property if the model is to mirror realistic spacetime emergence.
 
 5.5 Summary of Implications
 
@@ -622,170 +622,9 @@ Metric	Trend	SCM Interpretation
 
 Mean Pair Purity	↑ then stable	Increased local order, reduced entropy
 Mutual Information	↑ then slight ↓	Strengthened edge weights in network geometry
-Curvature	Constant (2.0)	Isotropic manifold; test higher n for variation
-Scalability	Pending n=8 results	Potential complexity emergence
-
-
-
----
-Got it — I’ll now write Section 6: Methodology & Simulation Details in the locked-in SCM GitHub format.
-
-This will cover:
-
-Simulation environment and libraries
-
-Parameter configuration
-
-Step-by-step algorithm used
-
-Definitions of cost functional, purity, and mutual information calculations
-
-Notes for reproducibility
-
-
-Here’s the full draft:
-
-## 6. Methodology & Simulation Details
-
-This section details the computational setup, parameter choices, and algorithmic steps used to generate the SCM results presented in Sections 4 and 5.
-
----
-
-### 6.1 Simulation Environment
-
-**Programming Language:** Python 3.11  
-**Key Libraries:**
-- `numpy` — Matrix operations and numerical computation
-- `scipy.linalg` — Linear algebra, matrix exponentials
-- `qutip` — Quantum object creation, density matrix evolution
-- `matplotlib` — Data visualization
-- `random` / `numpy.random` — Seed-based reproducibility
-
----
-
-### 6.2 System Parameters
-
-| Parameter        | Value     | Description |
-|------------------|-----------|-------------|
-| **n**            | 5         | Number of qubits in the simulation |
-| **T**            | 10        | Total number of time steps |
-| **dt**           | 0.2       | Time step size |
-| **grad_step**    | 0.08      | Gradient descent step size |
-| **seed**         | 3         | Random seed for reproducibility |
-
----
-
-### 6.3 State Initialization
-
-Initial density matrix \( \rho_0 \) was generated as a random pure state:
-
-```math
-|\psi_0\rangle = \frac{1}{\sqrt{\sum_i |a_i|^2}} \sum_i a_i |i\rangle
-
-where ( a_i ) are complex coefficients drawn from a Gaussian distribution with mean 0 and variance 1.
-
-The density matrix is then:
-
-\rho_0 = |\psi_0\rangle\langle\psi_0|
+Curvature	Constant (2.0)	Isotropic manifold; test higher ( n ) for variation
+Scalability	Pending n=8	Potential complexity emergence
 
 
 ---
-
-6.4 Cost Functional
-
-We minimize the neighborhood 2-Rényi entropy:
-
-S_2(\rho) = -\log \left[ \mathrm{Tr}(\rho^2) \right]
-
-For SCM, the cost functional is defined as:
-
-\mathcal{C} = \sum_{\text{pairs } (i,j)} S_2(\rho_{ij})
-
-where ( \rho_{ij} ) is the reduced density matrix of qubits ( i ) and ( j ).
-
-
----
-
-6.5 Optimization Algorithm
-
-Projected 2-Rényi Gradient Optimizer Steps:
-
-1. Compute Gradient:
-Evaluate the derivative of the cost functional w.r.t. the control parameters.
-
-
-2. Project:
-Project gradient updates back into the feasible space of valid quantum states (positive semidefinite, unit trace).
-
-
-3. Update:
-
-\theta_{t+1} = \theta_t - \eta \nabla \mathcal{C}(\theta_t)
-
-where ( \eta = ) grad_step.
-
-
-4. Iterate:
-Repeat for ( T ) steps.
-
-
-
-
----
-
-6.6 Purity Calculation
-
-For each qubit pair:
-
-\text{Purity}(\rho_{ij}) = \mathrm{Tr}(\rho_{ij}^2)
-
-Mean pair purity is computed by averaging over all pairs.
-
-
----
-
-6.7 Mutual Information Calculation
-
-For subsystems A and B:
-
-I(A : B) = S(\rho_A) + S(\rho_B) - S(\rho_{AB})
-
-with von Neumann entropy:
-
-S(\rho) = -\mathrm{Tr}(\rho \log \rho)
-
-
----
-
-6.8 Curvature Calculation
-
-SCM curvature is defined as:
-
-K_{ij} = \frac{1}{\epsilon + I_{ij}}
-
-where ( \epsilon ) is a small regularization constant to avoid division by zero.
-
-
----
-
-6.9 Reproducibility
-
-To replicate:
-
-1. Set seed = 3 before generating initial state.
-
-
-2. Run simulation with parameters in 6.2.
-
-
-3. Implement algorithms exactly as in 6.5.
-
-
-4. Validate results by comparing cost_trace, mean_pair_purity_trace, mi_snapshots, and curv_snapshots to Section 4 data.
-
-
-
-
----
-
 
