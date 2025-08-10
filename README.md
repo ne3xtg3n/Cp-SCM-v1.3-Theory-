@@ -634,9 +634,137 @@ Energy flows along the edges as shimmering blue and gold streams, illustrating m
 
 In the background, faint curvature lines ripple outward, visualizing SCM curvature (Kᵢⱼ) across the network.
 
+<img width="1024" height="1024" alt="1000016572" src="https://github.com/user-attachments/assets/7b230718-2dac-4195-a7c1-8cf465dc3cee" />
+
 The scene is lit with soft cosmic light, blending scientific precision with dreamlike aesthetics.
 
 
 ---
 
+<img width="1024" height="1024" alt="1000016991" src="https://github.com/user-attachments/assets/51a054eb-e60d-4a18-874d-f082ea91c334" />
+FIG. 2 – Mathematical Framework
+
+Purpose: Depict the key equations of SCM embedded in a dynamic field representation.
+
+Image Prompt:
+"Digital artwork combining glowing LaTeX-rendered equations for Rényi entropy, mutual information, and curvature, floating above a 3D holographic grid, soft neon teal and gold lighting, scientific fantasy art style"
+
+Description:
+This figure integrates SCM’s defining equations—purity, mutual information, curvature—over a holographic quantum grid, visually representing the mathematical backbone of the theory.
+
+
+
+---
+![1000016992](https://github.com/user-attachments/assets/9257b179-a03a-4653-8684-e454f29f9b7b)
+
+FIG. 3 – State Initialization
+
+Purpose: Show the process of generating a random pure state and forming the density matrix.
+
+Image Prompt:
+"Visual simulation of a qubit state vector collapsing into a density matrix, particles of light forming a square quantum grid, blue-white glow, cinematic quantum computing aesthetic"
+
+Description:
+Depicts the transformation from a Gaussian-distributed quantum state vector into a density matrix, the starting point of SCM’s optimization process.
+
+
+
+---
+![1000016993](https://github.com/user-attachments/assets/a1336b30-fec9-4fc0-b868-fcf2cf29e5d4)
+
+FIG. 4 – Optimization Algorithm Flow
+
+Purpose: Diagram the projected 2-Rényi gradient optimizer used in SCM.
+
+Image Prompt:
+"Clean vector-style flowchart with neon accents showing SCM optimization steps: Compute Gradient → Project → Update → Iterate, with icons for qubits, gradient fields, and projection operators"
+
+Description:
+Shows the logical flow of SCM’s optimization loop, highlighting the projection step to maintain valid quantum states.
+
+
+
+---
+![1000016994](https://github.com/user-attachments/assets/e07db565-adb9-4f61-99dc-d991049eeeaa)
+
+FIG. 5 – Purity & Entropy Visualization
+
+Purpose: Illustrate purity changes over time.
+
+Image Prompt:
+"Scientific chart morphing into a 3D particle simulation, purity values represented as bright clusters forming order from chaos, black background with neon cyan-orange glow"
+
+Description:
+Visual metaphor for increasing quantum purity during SCM’s optimization, blending graph data with particle-based animation.
+
+
+
+---
+<img width="1536" height="1024" alt="1000016995" src="https://github.com/user-attachments/assets/826cc935-381f-444f-9d36-14c01e417edd" />
+
+FIG. 6 – Mutual Information Mapping
+
+Purpose: Map subsystem correlations.
+
+Image Prompt:
+"Circular correlation matrix heatmap, neon blue and red gradients, representing mutual information strength between qubit pairs, embedded in a holographic display"
+
+Description:
+Displays mutual information between qubit pairs, a core measure for SCM curvature calculations.
+
+
+
+---
+
+FIG. 7 – Curvature Field Representation
+
+Purpose: Show curvature across qubit space.
+
+Image Prompt:
+"3D wireframe manifold with curvature intensity represented by glowing heatmap colors, quantum particles moving along curved paths, deep space background"
+
+Description:
+Visualizes SCM curvature (K_ij) as a spatially varying surface, representing computational stress points in the manifold.
+
+
+
+---
+
+FIG. 8 – Simulation Environment
+
+Purpose: Show the hardware/software stack for SCM experiments.
+
+Image Prompt:
+"Photorealistic workstation running Python SCM simulation, dual monitors with code and 3D visualizations, physical quantum device mockup on desk, realistic lighting"
+
+Description:
+Depicts the real-world computational setup used for SCM experiments, including Python code and live data plots.
+
+
+
+---
+
+FIG. 9 – Core Results Snapshot
+
+Purpose: Show key output metrics in one composite.
+
+Image Prompt:
+"Collage of line charts (purity trace, cost functional decay), heatmaps (mutual information), and 3D curvature map, arranged in scientific journal style"
+
+Description:
+Summarizes the key experimental results of SCM v1.3, combining multiple visual outputs into a single figure.
+
+
+
+---
+
+FIG. 10 – Future Applications
+
+Purpose: Inspire with SCM’s potential uses.
+
+Image Prompt:
+"Cinematic scene of futuristic quantum research lab, SCM manifold hologram at center, scientists and AI assistants working, applications like climate modeling and deep space navigation in background screens"
+
+Description:
+Projects SCM’s long-term potential, showcasing the technology in future scientific and industrial environments.
 
